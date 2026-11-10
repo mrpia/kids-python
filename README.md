@@ -11,6 +11,7 @@ Die Lektion dauert etwa eine Stunde.
 | `aufgaben/SPICKZETTEL.txt` | Übersicht Scratch → Python und typische Fehler |
 | `CHEAT-SHEET.pdf` | Spickzettel zum Ausdrucken, zwei A4-Seiten, beidseitig |
 | `CHEAT-SHEET.md` | Derselbe Spickzettel als Markdown |
+| `CHEAT-SHEET.html` | Quelle des PDF |
 | `loesungen/` | Lösungen für die Leitung |
 
 ## Aufgaben
@@ -80,3 +81,19 @@ Die Lektion dauert etwa eine Stunde.
   Zeige den Fehler den Kindern: Eine Fehlermeldung lesen gehört zur Arbeit eines Entwicklers.
 - `06_quiz.py` vergleicht Textantworten mit `.lower()`.
   Deshalb muss die erwartete Antwort im Code kleingeschrieben sein.
+
+## Spickzettel ändern
+
+`CHEAT-SHEET.html` ist die Quelle von `CHEAT-SHEET.pdf`.
+`CHEAT-SHEET.md` enthält denselben Text und wird nicht automatisch angepasst.
+
+1. Ändere `CHEAT-SHEET.html` und `CHEAT-SHEET.md`.
+2. Erzeuge das PDF neu, im Projektordner unter Linux oder WSL mit Google Chrome:
+   ```
+   google-chrome --headless=new --no-pdf-header-footer --virtual-time-budget=15000 --print-to-pdf=CHEAT-SHEET.pdf CHEAT-SHEET.html
+   ```
+   Chrome braucht dafür Internet, weil die Schriften von Google Fonts kommen.
+   Ohne Internet nimmt Chrome Ersatzschriften.
+3. Öffne das PDF und prüfe, dass es genau zwei Seiten hat.
+   Jede Seite ist fix A4 gross.
+   Zu viel Inhalt überlappt die Fusszeile oder wird unten abgeschnitten, ohne Warnung.
